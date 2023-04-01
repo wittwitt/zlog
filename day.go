@@ -3,6 +3,7 @@ package zlog
 import (
 	"errors"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 	"sync"
@@ -48,7 +49,7 @@ func (p *dayWriter) run() {
 	logCron.AddFunc("10 0 * * *", func() {
 		now := time.Now()
 		if err := p.makeDateFile(now); err != nil {
-			fmt.Printf("makeDateFile: %v\n", err)
+			log.Printf("makeDateFile: %v\n", err)
 		}
 	})
 	logCron.Start()

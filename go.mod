@@ -1,4 +1,4 @@
-module github.com/stacktao/zlog
+module github.com/wittwitt/zlog
 
 go 1.19
 
